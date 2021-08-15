@@ -1,0 +1,19 @@
+{
+  "name": "ecmascript-web",
+  "version": "1.0.0",
+  "description": "Basic project of Javascript to understand, learn and improvement skills about ecmascript standard 👨🏻‍💻 🟨",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/ecmascript-web.git"
+  },
+  "author": "Pedro Capriles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/ecmascript-web/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/ecmascript-web#readme"
+}
