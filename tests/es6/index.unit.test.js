@@ -1,4 +1,11 @@
-const { newFunction, newFunctionES6 } = require("../../src/es6");
+const {
+  newFunction,
+  newFunctionES6,
+  slugFormat,
+  greetingName,
+  square,
+  helloPromise,
+} = require("../../src/es6");
 describe("Test suite with demo change of ES6", () => {
   test("Should test params pass old way", () => {
     const expectedResult = "Pedro, 32, VE";
@@ -108,5 +115,108 @@ describe("Test suite with demo change of ES6", () => {
 
     expect(global).toBeDefined();
     expect(globalLet).toBe(undefined);
+  });
+
+  test("Should create a new object", () => {
+    const expectedResult = {
+      name: "Pedro",
+      age: 32,
+    };
+    let name = "Pedro";
+    let age = 32;
+
+    const obj = { name: name, age: age };
+
+    expect(obj).toEqual(expectedResult);
+  });
+
+  test("Should create a new object with ES6", () => {
+    const expectedResult = {
+      name: "Pedro",
+      age: 32,
+    };
+    let name = "Pedro";
+    let age = 32;
+
+    const obj = { name, age };
+
+    expect(obj).toEqual(expectedResult);
+  });
+
+  test("Should run the array with map", () => {
+    const expectedResult = ["Pedro", "Yessica"];
+    const names = [
+      {
+        name: "Pedro",
+        age: 32,
+      },
+      {
+        name: "Yessica",
+        age: 27,
+      },
+    ];
+
+    let listOfNames = names.map(function (item) {
+      return item.name;
+    });
+
+    expect(listOfNames).toEqual(expectedResult);
+  });
+
+  test("Should run the array with map with arrow function with ES6", () => {
+    const expectedResult = ["Pedro", "Yessica"];
+    const names = [
+      {
+        name: "Pedro",
+        age: 32,
+      },
+      {
+        name: "Yessica",
+        age: 27,
+      },
+    ];
+
+    let listOfNames = names.map((item) => item.name);
+
+    expect(listOfNames).toEqual(expectedResult);
+  });
+
+  test("Should return a string with slug format based in an arrow function", () => {
+    const expectedResult = "Pedro-32-VE";
+
+    let dataSluged = slugFormat("Pedro", 32, "VE");
+
+    expect(dataSluged).toEqual(expectedResult);
+  });
+
+  test("Should return a string with a greeting", () => {
+    const expectedResult = "Hi Pedro";
+
+    let greeting = greetingName("Pedro");
+
+    expect(greeting).toEqual(expectedResult);
+  });
+
+  test("Should elevate a number to square", () => {
+    const expectedResult = 4;
+
+    let elevated = square(2);
+
+    expect(elevated).toEqual(expectedResult);
+  });
+
+  test("Should managment promise with resolved", () => {
+    const expectedResult = "Hey! 🟢";
+
+    helloPromise()
+      .then((response) => expect(response).toBe(expectedResult))
+      .catch((error) => error);
+  });
+
+  test("Should managment promise with reject", () => {
+    const expectedResult = "Ups!! something was wrong 💥";
+    helloPromise(false)
+      .then((response) => response)
+      .catch((error) => expect(error).toBe(expectedResult));
   });
 });
