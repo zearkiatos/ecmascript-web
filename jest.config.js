@@ -1,6 +1,6 @@
 module.exports = {
   name: "ecmascript-web",
-  verbose: true,
+  verbose: false,
   testMatch: ["**/*.test.js"],
   testEnvironment: "node",
   collectCoverageFrom: ["src/**/*.js", "!**/node_modules/**"],

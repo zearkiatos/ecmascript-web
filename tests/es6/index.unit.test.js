@@ -107,14 +107,12 @@ describe("Test suite with demo change of ES6", () => {
   });
 
   test("Should evalue let declaration and var declaration", () => {
-    globalLet = undefined;
     const fn = function () {
       var global = "Global Var";
       let globalLet = "Global Let";
     };
 
     expect(global).toBeDefined();
-    expect(globalLet).toBe(undefined);
   });
 
   test("Should create a new object", () => {
