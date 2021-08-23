@@ -1,3 +1,4 @@
+import { helloAsync, anotherAsyncFunction } from '../../src/es8'
 describe("Test suite with demo change of ES8", () => {
   test("Should convert a object to array", () => {
     const expectedResult = [
@@ -54,4 +55,45 @@ describe("Test suite with demo change of ES8", () => {
 
     expect(stringConverted).toEqual(expectedResult);
   });
+
+  test("Should result a promise with async await", async () => {
+    const expectedResult = 'Hello World';
+
+    const hello = await helloAsync(true);
+
+    expect(hello).toEqual(expectedResult);
+  });
+
+  test("Should result a promise with async await with a reject", async () => {
+    const expectedResult = '🛑 Something was Wrong!';
+
+    try {
+      await helloAsync(false);
+    }
+    catch(exception) {
+      expect(exception.message).toEqual(expectedResult);
+    }
+  });
+
+  test("Should return in the try result a promise with async await", async () => {
+    const expectedResult = 'Hello World';
+
+    const hello = await anotherAsyncFunction(true);
+
+    expect(hello).toEqual(expectedResult);
+  });
+
+  test("Should return result a promise with async await with a reject from catch", async () => {
+    const expectedResult = '🛑 Something was Wrong!';
+
+    try {
+      await anotherAsyncFunction(false);
+    }
+    catch(exception) {
+      expect(exception.message).toEqual(expectedResult);
+    }
+
+  });
+
+
 });
