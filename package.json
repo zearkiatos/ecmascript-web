@@ -1,0 +1,27 @@
+{
+  "name": "ecmascript-web",
+  "version": "1.0.0",
+  "description": "Basic project of Javascript to understand, learn and improvement skills about ecmascript standard 👨🏻‍💻 🟨",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -c jest.config.js --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/ecmascript-web.git"
+  },
+  "author": "Pedro Capriles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/ecmascript-web/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/ecmascript-web#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.0",
+    "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0"
+  }
+}
