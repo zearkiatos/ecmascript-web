@@ -55,8 +55,8 @@ describe("Test suite with demo change of ES9", () => {
       const month = match[2];
       const day = match[3];
 
-      expect(year).toBe("2021");
-      expect(month).toBe("08");
-      expect(day).toBe("22");
+      expect(year).toEqual("2021");
+      expect(month).toEqual("08");
+      expect(day).toEqual("22");
   });
 });
