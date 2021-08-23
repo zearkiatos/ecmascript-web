@@ -38,25 +38,24 @@ describe("Test suite with demo change of ES9", () => {
     expect(newObject).toEqual(expectedResult);
   });
 
-  test("Should resolve promise as the old way", () => {
+  test("Should resolve promise as the old way", async () => {
     const expectedResult = "Hello World";
 
     helloWorld()
       .then((response) => expect(response).toEqual(expectedResult))
-      .catch((error) => console.log(error))
-      .finally(() => console.log('Finished'));
+      .catch((error) => console.log(error));
   });
 
   test("Should evaluate the regular expression and get each one of element", () => {
-      const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/;
+    const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/;
 
-      const match = regexData.exec('2021-08-22');
-      const year = match[1];
-      const month = match[2];
-      const day = match[3];
+    const match = regexData.exec("2021-08-22");
+    const year = match[1];
+    const month = match[2];
+    const day = match[3];
 
-      expect(year).toEqual("2021");
-      expect(month).toEqual("08");
-      expect(day).toEqual("22");
+    expect(year).toEqual("2021");
+    expect(month).toEqual("08");
+    expect(day).toEqual("22");
   });
 });
